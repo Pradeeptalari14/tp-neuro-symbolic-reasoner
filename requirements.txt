@@ -1,0 +1,1 @@
+z3-solver>=4.12.0\nnumpy>=1.24.0\npydantic>=2.5.0\npytest>=8.0.0\n

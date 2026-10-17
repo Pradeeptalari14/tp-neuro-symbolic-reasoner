@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  neuro-symbolic-reasoner:
+    build: .
+    image: ghcr.io/pradeeptalari14/tp-neuro-symbolic-reasoner:latest
+    container_name: tp-neuro-symbolic-reasoner
+    restart: unless-stopped
+    environment:
+      - LOG_LEVEL=INFO
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
